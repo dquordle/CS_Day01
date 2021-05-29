@@ -1,7 +1,7 @@
-namespace d01_ex01.Events
+public record CreatedEvent : Event
 {
-    public class CreatedEvent
+    public CreatedEvent()
     {
-        
+        State = TaskState.New;
     }
 }

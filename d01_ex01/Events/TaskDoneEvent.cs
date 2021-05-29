@@ -1,7 +1,7 @@
-namespace d01_ex01.Events
+public record TaskDoneEvent : Event
 {
-    public class TaskDoneEvent
+    public TaskDoneEvent()
     {
-        
+        State = TaskState.Done;
     }
 }

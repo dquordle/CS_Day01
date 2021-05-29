@@ -1,7 +1,7 @@
-namespace d01_ex01.Events
+public record TaskWontDoEvent : Event
 {
-    public class TaskWontDoEvent
+    public TaskWontDoEvent()
     {
-        
+        State = TaskState.WontDo;
     }
 }

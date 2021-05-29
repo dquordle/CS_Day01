@@ -1,7 +1,4 @@
-namespace d01_ex01.Events
+public record Event
 {
-    public class Event
-    {
-        
-    }
+    public TaskState State;
 }
