@@ -4,13 +4,11 @@ public struct ExchangeSum
 {
     private double _Sum;
     private string _ID;
-    // private string[] _atrs;
-
     public ExchangeSum(string value)
     {
-        string[] _atrs = value.Split(" ");
-        _Sum = double.Parse(_atrs[0]);
-        _ID = _atrs[1];
+        string[] atrs = value.Split(" ");
+        _Sum = double.Parse(atrs[0]);
+        _ID = atrs[1];
     }
 
     public ExchangeSum(string id, double sum)
@@ -30,10 +28,6 @@ public struct ExchangeSum
 
     public override string ToString()
     {
-        double sum_2 = Math.Round(Sum, 2);
-        string ret = sum_2.ToString();
-        ret += " ";
-        ret += _ID;
-        return ret;
+        return $"{_Sum:N2} {_ID}";
     }
 }

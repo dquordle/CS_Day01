@@ -1,8 +1,8 @@
 public struct ExchangeRate
 {
-    private string _ID_from;
-    private string _ID_to;
-    private double _rate;
+    private readonly string _ID_from;
+    private readonly string _ID_to;
+    private readonly double _rate;
 
     public ExchangeRate(string from, string to_and_rate)
     {

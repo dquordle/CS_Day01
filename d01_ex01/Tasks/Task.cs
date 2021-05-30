@@ -14,7 +14,6 @@ public class Task
     private DateTime? DueDate;
     private TaskType Type;
     private TaskPriority? Priority;
-    // private TaskState? State;
     private List<Event> History;
     
     public Task(string title, TaskType type, string summary, DateTime? duedate, TaskPriority? priority)
@@ -30,7 +29,6 @@ public class Task
         History = new List<Event>();
         Event created = new CreatedEvent();
         History.Add(created);
-        // State = TaskState.New;
     }
 
     public string Title
@@ -39,14 +37,9 @@ public class Task
     }
     public override string ToString()
     {
-        string ret;
-        ret = "- ";
-        ret += $"{_Title}\n[{Type}] [{GetState()}]\nPriority: {Priority}";
+        string ret = $"- {_Title}\n[{Type}] [{GetState()}]\nPriority: {Priority}";
         if (DueDate != null)
-        {
-            ret += $", Due till {DueDate.ToString()}";
-            ret = ret.Remove(ret.Length - 9);
-        }
+            ret += $", Due till {DueDate:d}";
         if (Summary != null)
             ret += $"\n{Summary}";
         return ret;
